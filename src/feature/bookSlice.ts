@@ -32,7 +32,7 @@ export const updateBookReader = createAsyncThunk('book/update', async (value:any
         if (token) {
             axios.defaults.headers.common['authorization'] = `Bearer ${token}`
         }
-        const response = await axios.put(`http://localhost:3009/api/update/book/${value}`)
+        const response = await axios.put(`https://18.193.111.246/api/update/book/${value}`)
         console.log('update reads count', response.data)
         return response.data
     } catch (error:any) {
@@ -53,7 +53,7 @@ export const fetchBooks = createAsyncThunk('books/get', async (_, { rejectWithVa
         if (token) {
             axios.defaults.headers.common['authorization'] = `Bearer ${token}`
         }
-        const response = await axios.get('http://localhost:3009/api/get/books')
+        const response = await axios.get('https://18.193.111.246/api/get/books')
         if (response.data) {
             console.log(response.data)
             dispatch(clearError())
@@ -77,7 +77,7 @@ export const getMyBooks = createAsyncThunk('author/books', async (_, {rejectWith
         if (token) {
             axios.defaults.headers.common['authorization'] = `Bearer ${token}`
         }
-        const response = await axios.get("http://localhost:3009/api/get/my/books")
+        const response = await axios.get("https://18.193.111.246/api/get/my/books")
         console.log('author', response.data.books)
         
         // return response.data
@@ -101,7 +101,7 @@ export const publishBook = createAsyncThunk('publish/book', async (values: any, 
         if (token) {
             axios.defaults.headers.common['authorization'] = `Bearer ${token}`
         }
-        const response = await axios.post("http://localhost:3009/api/create/book", { name })
+        const response = await axios.post("https://18.193.111.246/api/create/book", { name })
         return response.data
     } catch (error:any) {
         if (axios.isAxiosError(error)) {

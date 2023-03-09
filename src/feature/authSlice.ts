@@ -28,7 +28,7 @@ const initialState: InitialStateType = {
 export const loginWithEmailAndPassword = createAsyncThunk('user/auth', async(values: any, {rejectWithValue,dispatch}) => {
     try {
         const {email,password, navigate} = values 
-        const response = await axios.post('http://localhost:3009/api/user/login', { email, password })
+        const response = await axios.post('https://18.193.111.246/api/user/login', { email, password })
         if (response.data) {
             dispatch(clearError())
             localStorage.setItem('token', response.data.token)
@@ -59,7 +59,7 @@ export const updateAsAuthor = createAsyncThunk('user/update', async (_,{rejectWi
         if (token) {
             axios.defaults.headers.common['authorization'] = `Bearer ${token}`
         }
-        const response = await axios.put('http://localhost:3009/api/user/update')
+        const response = await axios.put('https://18.193.111.246/api/user/update')
         console.log("response from user-update",response.data)
         if (response.data) {
             // navigate('/author')

@@ -7,6 +7,8 @@ import { loginWithEmailAndPassword } from '../../../feature/authSlice';
 import { useNavigate } from 'react-router-dom';
 import errorSlice from '../../../feature/errorSlice';
 import FormHandler from '../../../components/form-handler/FormHandler';
+import UserCreds from '../../../components/user-creds/UserCreds';
+import axios from 'axios';
 
 
 const Signin = () => {
@@ -14,13 +16,8 @@ const Signin = () => {
   const navigate = useNavigate()
   const dispatch = useAppDispatch()
 
-  // const error = useAppSelector(state => state.error.errorMessage)
   const error = useAppSelector(state => state.error.errorMessage)
-  
 
-    const notifyGuestUserCreds = () => {
-           alert('use this to login') 
-    }
 
     const submitHandler = (values: any) => {
      
@@ -31,14 +28,7 @@ const Signin = () => {
     { name: 'email', label: 'Email', type: 'email' },
   { name: 'password', label: 'Password', type: 'password' },
   ]
-useEffect(() => {
-    // const timer = setTimeout(() => {
-    //     notifyGuestUserCreds()
-    // }, 2000)
-    // return () => {
-    //     clearTimeout(timer)
-    // }
-},[])
+
   return (
       <div className={styles.Login}>
           <div className={styles.Login_form}>
