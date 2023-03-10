@@ -59,8 +59,12 @@ const Reader = () => {
                           <span className={styles.Details_content_close}>
                              <AiOutlineCloseCircle onClick={handleCloseModal}/> 
                           </span>
-                            <span>{selectedItem.name}</span>
-                            <span>{selectedItem.author.name}</span>
+                          <div style={{width:'100%', height:'100%', display:'flex',justifyContent:'center',alignItems:'center',flexDirection:'column'}}>
+                              <h2>Content</h2>
+                              <span>{selectedItem.name}</span>
+                              
+                              <span>{selectedItem.author.name}</span>
+                              </div>
                         </div>
                     </div>
                 </Modal>
