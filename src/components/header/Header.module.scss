@@ -15,7 +15,10 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        border: 1px solid black;
+        color: whitesmoke;
+        text-transform: uppercase;
+        // border: 1px solid black;
+        // background: whitesmoke;
     }
     &_options{
         width: auto;
